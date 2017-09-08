@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@page import="java.util.*"%>
+<%@page import="com.qd.student.pojo.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -69,7 +71,7 @@
 					</ul>
 					<!-- jsp脚本 -->
 					<%
-						ArrayList<Student> list = request.getAttribute("list");
+						ArrayList<Student> list = (ArrayList<Student>)request.getAttribute("list");
 					%>
 					<table class="table table-bordered table-hover table-condensed">
 						<tr class="success">
@@ -79,27 +81,20 @@
 							<td>性别</td>
 							<td>地址</td>
 						</tr>
-						<tr>
-							<td>1</td>
-							<td>张三</td>
-							<td>20</td>
-							<td>男</td>
-							<td>青岛</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>张三</td>
-							<td>20</td>
-							<td>男</td>
-							<td>青岛</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>张三</td>
-							<td>20</td>
-							<td>男</td>
-							<td>青岛</td>
-						</tr>
+						<%
+							for(Student stu : list){
+						%>
+								<tr>
+									<td><%=stu.getId()%></td>
+									<td><%=stu.getName()%></td>
+									<td><%=stu.getAge()%></td>
+									<td><%=stu.getGender()%></td>
+									<td><%=stu.getAddress()%></td>
+								</tr>
+						<%
+			    			}
+						%>
+						
 					</table>
 				</div>
 			</div>
