@@ -80,6 +80,7 @@
 							<td>年龄</td>
 							<td>性别</td>
 							<td>地址</td>
+							<td>删除</td>
 						</tr>
 						<%
 							for(Student stu : list){
@@ -90,6 +91,7 @@
 									<td><%=stu.getAge()%></td>
 									<td><%=stu.getGender()%></td>
 									<td><%=stu.getAddress()%></td>
+									<td><a href="/ShiXun0901/deleteStudent?id=<%=stu.getId()%>">删除</a></td>
 								</tr>
 						<%
 			    			}

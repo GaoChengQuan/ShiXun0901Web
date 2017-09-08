@@ -19,4 +19,18 @@
   	<servlet-name>Student</servlet-name>
   	<url-pattern>/student</url-pattern>
   </servlet-mapping>
+  
+  
+  
+  
+  
+   <servlet>
+  	<servlet-name>DeleteStudent</servlet-name>
+  	<servlet-class>com.qd.student.DeleteStudent</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DeleteStudent</servlet-name>
+  	<url-pattern>/deleteStudent</url-pattern>
+  </servlet-mapping>
 </web-app>
